@@ -22,6 +22,11 @@
 			"Fromholdio\\GridFieldLimiter\\": "src/"
 		}
 	},
+    "extra": {
+        "expose": [
+            "client"
+        ]
+    },
 	"prefer-stable": true,
 	"minimum-stability": "dev"
 }
