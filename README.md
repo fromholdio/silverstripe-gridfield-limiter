@@ -17,6 +17,15 @@ SilverStripe 4.2+
 
 `composer require fromholdio/silverstripe-gridfield-limiter`
 
+## Detail
+
+* Add `GridFieldLimiter` to your `GridFieldConfig`, and define a target fragment (defaults to `before`) 
+* It will create two new target fragments, `limiter-before-left` and `limiter-before-right` (`before` comes from the defined target fragment)
+* You can now fill these two fragments with grid field components, like a `GridFieldAddNewButton` on the left and a `GridFieldAddExistingAutocompleter` on the right, which will all be hidden (via css) from the CMS user once the grid field reaches its row limit
+* If enabled, a message will be displayed to the user telling them to remove an item before they add a new one
+
+Per the note above, this does not in anyway validate the number of objects in a relationship or prevent an object being added - it's just a cheeky way to implement a limit for CMS users managing a grid field.
+
 ## Usage example
 
 XYZ
