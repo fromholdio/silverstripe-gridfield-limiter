@@ -1,0 +1,27 @@
+{
+	"name": "fromholdio/silverstripe-gridfield-limiter",
+	"type": "silverstripe-vendormodule",
+	"description": "Limit number of records that can be added to a SilverStripe GridField",
+	"license": "BSD-3-Clause",
+	"keywords": ["silverstripe", "gridfield", "limit"],
+	"homepage": "https://github.com/fromholdio/silverstripe-gridfield-limiter",
+	"support": {
+		"issues": "https://github.com/fromholdio/silverstripe-gridfield-limiter/issues"
+	},
+	"authors": [{
+		"name": "Luke Fromhold",
+		"homepage": "https://fromhold.io"
+	}],
+	"require": {
+		"php": ">=5.6",
+		"silverstripe/vendor-plugin": "^1.0",
+		"silverstripe/framework": "^4.2"
+	},
+	"autoload": {
+		"psr-4": {
+			"Fromholdio\\GridFieldLimiter\\": "src/"
+		}
+	},
+	"prefer-stable": true,
+	"minimum-stability": "dev"
+}

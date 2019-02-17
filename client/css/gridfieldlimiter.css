@@ -1,0 +1,4 @@
+.grid-field__limiter {}
+.grid-field__limiter.is-limited { display: none; }
+.grid-field__limiter-message { padding: 1.2308rem 0; }
+.grid-field__limiter-message p { font-weight: bold; margin-bottom: 0; }
