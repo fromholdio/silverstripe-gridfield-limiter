@@ -10,13 +10,10 @@ use SilverStripe\View\SSViewer;
 class GridFieldLimiter implements GridField_HTMLProvider
 {
 
-    protected bool $showLimitReachedMessage;
-
     public function __construct(protected readonly int    $limit = 0,
                                 protected readonly string $targetFragment = 'before',
-                                bool                      $showLimitReachedMessage = false)
+                                protected bool            $showLimitReachedMessage = false)
     {
-        $this->showLimitReachedMessage = $showLimitReachedMessage;
         Requirements::css('fromholdio/silverstripe-gridfield-limiter:client/css/gridfieldlimiter.css');
     }
 
