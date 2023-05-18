@@ -11,7 +11,7 @@ Instead, it manipulates the `GridField` UI to allow developers to hide controls 
 
 ## Requirements
 
-SilverStripe 4.2+
+SilverStripe 5+
 
 ## Installation
 

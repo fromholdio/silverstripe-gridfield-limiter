@@ -9,27 +9,22 @@ use SilverStripe\View\SSViewer;
 
 class GridFieldLimiter implements GridField_HTMLProvider
 {
-    protected $targetFragment;
-    protected $limit;
-    protected $showLimitReachedMessage;
 
-    public function __construct($limit = 0, $targetFragment = 'before', $showLimitReachedMessage = false)
+    public function __construct(protected readonly int    $limit = 0,
+                                protected readonly string $targetFragment = 'before',
+                                protected bool            $showLimitReachedMessage = false)
     {
-        $this->limit = $limit;
-        $this->targetFragment = $targetFragment;
-        $this->showLimitReachedMessage = $showLimitReachedMessage;
-
         Requirements::css('fromholdio/silverstripe-gridfield-limiter:client/css/gridfieldlimiter.css');
     }
 
-    public function getHTMLFragments($gridField)
+    public function getHTMLFragments($gridField): array
     {
         $data = ArrayData::create([
-            'TargetFragmentName'    =>  $this->targetFragment,
-            'LeftFragment'          =>  "\$DefineFragment(limiter-{$this->targetFragment}-left)",
-            'RightFragment'         =>  "\$DefineFragment(limiter-{$this->targetFragment}-right)",
-            'Limit'                 =>  (int) $this->limit,
-            'Count'                 =>  (int) $gridField->getManipulatedList()->count(),
+            'TargetFragmentName' => $this->targetFragment,
+            'LeftFragment' => "\$DefineFragment(limiter-{$this->targetFragment}-left)",
+            'RightFragment' => "\$DefineFragment(limiter-{$this->targetFragment}-right)",
+            'Limit' => $this->limit,
+            'Count' => $gridField->getManipulatedList()->count(),
             'ShowLimitReachedMessage' => $this->showLimitReachedMessage
         ]);
 
@@ -39,9 +34,9 @@ class GridFieldLimiter implements GridField_HTMLProvider
         ];
     }
 
-    public function setShowLimitReachedMessage($bool)
+    public function setShowLimitReachedMessage($bool): GridFieldLimiter
     {
-        $this->showLimitReachedMessage = (bool) $bool;
+        $this->showLimitReachedMessage = (bool)$bool;
         return $this;
     }
 }
