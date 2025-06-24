@@ -1,0 +1,8 @@
+/node_modules/
+yarn-error.log
+.phpunit.result.cache
+app/
+behat.yml
+composer.lock
+public/
+vendor/

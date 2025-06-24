@@ -3,7 +3,7 @@
 namespace Fromholdio\GridFieldLimiter\Forms;
 
 use SilverStripe\Forms\GridField\GridField_HTMLProvider;
-use SilverStripe\View\ArrayData;
+use SilverStripe\Model\ArrayData;
 use SilverStripe\View\Requirements;
 use SilverStripe\View\SSViewer;
 
